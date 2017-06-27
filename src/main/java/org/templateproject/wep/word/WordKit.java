@@ -1,10 +1,4 @@
-package me.wuwenbin.word;
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
+package org.templateproject.wep.word;
 
 import org.apache.poi.POIXMLProperties.CoreProperties;
 import org.apache.poi.hpsf.DocumentSummaryInformation;
@@ -15,9 +9,15 @@ import org.apache.poi.hwpf.usermodel.Bookmark;
 import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 
- * <b>ClassName</b>: WordUtils<br>
+ * <b>ClassName</b>: WordKit<br>
  * <b>Description</b>: 有关word的读取的工具类，大致2个分类：07版本以下（含），07版本以上（不含）<br>
  * 本工具类自是一些基础的word操作，更详细的请自行使用apache的poi相关类功能。去实现<br>
  * <b>Version</b>: Ver 1.0<br>
@@ -26,7 +26,7 @@ import org.apache.poi.xwpf.usermodel.XWPFDocument;
  * <b>date</b>: 2016年8月30日<br>
  * <b>time</b>: 下午4:25:17 <br>
  */
-public class WordUtils {
+public class WordKit {
 
 	/**
 	 * 获取WordExtrator对象，私有方法避免重复编写

@@ -1,4 +1,9 @@
-package me.wuwenbin.excel;
+package org.templateproject.wep.excel;
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,18 +12,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.util.CellRangeAddress;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 /**
- * 
- * <b>ClassName</b>: ExcelUtils<br>
+ *
+ * <b>ClassName</b>: ExcelKit<br>
  * <b>Description</b>: Excel文件操作工具类，包括读、写、合并等功能<br>
  * <b>Version</b>: Ver 1.0<br>
  *
@@ -26,7 +22,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * <b>date</b>: 2014-10-29<br>
  * <b>time</b>: 上午12:40:44 <br>
  */
-public class ExcelUtils {
+public class ExcelKit {
 
 	// =================常量部分===================
 	/**
@@ -142,7 +138,7 @@ public class ExcelUtils {
 
 	/**
 	 * 自动根据文件扩展名，调用对应的读取方法
-	 * 
+	 *
 	 * @Title: writeExcel
 	 * @Date : 2014-9-11 下午01:50:38
 	 * @param fromExcelPath
@@ -190,7 +186,7 @@ public class ExcelUtils {
 
 	/**
 	 * 自动根据文件扩展名，调用对应的写入方法
-	 * 
+	 *
 	 * @Title: writeExcel
 	 * @Date : 2014-9-11 下午01:50:38
 	 * @param rowList
@@ -234,7 +230,7 @@ public class ExcelUtils {
 
 	/**
 	 * 修改Excel（97-03版，xls格式）
-	 * 
+	 *
 	 * @Title: writeExcel_xls
 	 * @Date : 2014-9-11 下午01:50:38
 	 * @param rowList
@@ -295,11 +291,11 @@ public class ExcelUtils {
 
 	/**
 	 * 修改Excel（2007版，xlsx格式）
-	 * 
+	 *
 	 * @Title: writeExcel_xlsx
 	 * @Date : 2014-9-11 下午01:50:38
 	 * @param rowList
-	 * @param xlsPath
+	 * @param fromExcelPath
 	 * @throws IOException
 	 */
 	public void writeExcelByXlsx(List<Row> rowList, String fromExcelPath, String toExcelPath) throws IOException {
@@ -355,7 +351,7 @@ public class ExcelUtils {
 
 	/**
 	 * //读取Excel 2007版，xlsx格式
-	 * 
+	 *
 	 * @Title: readExcel_xlsx
 	 * @Date : 2014-9-11 上午11:43:11
 	 * @return
@@ -386,9 +382,9 @@ public class ExcelUtils {
 
 	/***
 	 * 读取Excel(97-03版，xls格式)
-	 * 
+	 *
 	 * @throws Exception
-	 * 
+	 *
 	 * @Title: readExcel
 	 * @Date : 2014-9-11 上午09:53:21
 	 */
@@ -418,7 +414,7 @@ public class ExcelUtils {
 
 	/***
 	 * 读取单元格的值
-	 * 
+	 *
 	 * @Title: getCellValue
 	 * @Date : 2014-9-11 上午10:52:07
 	 * @param cell
@@ -454,7 +450,7 @@ public class ExcelUtils {
 
 	/**
 	 * 通用读取Excel
-	 * 
+	 *
 	 * @Title: readExcel
 	 * @Date : 2014-9-11 上午11:26:53
 	 * @param wb
@@ -510,7 +506,7 @@ public class ExcelUtils {
 
 	/**
 	 * 修改Excel，并另存为
-	 * 
+	 *
 	 * @Title: WriteExcel
 	 * @Date : 2014-9-11 下午01:33:59
 	 * @param wb
@@ -578,7 +574,7 @@ public class ExcelUtils {
 
 	/**
 	 * 查找某行数据是否在Excel表中存在，返回行数。
-	 * 
+	 *
 	 * @Title: findInExcel
 	 * @Date : 2014-9-11 下午02:23:12
 	 * @param sheet
@@ -612,7 +608,7 @@ public class ExcelUtils {
 
 	/**
 	 * 复制一个单元格样式到目的单元格样式
-	 * 
+	 *
 	 * @param fromStyle
 	 * @param toStyle
 	 */
@@ -647,7 +643,7 @@ public class ExcelUtils {
 
 	/**
 	 * 获取合并单元格的值
-	 * 
+	 *
 	 * @param sheet
 	 * @param row
 	 * @param column
@@ -679,7 +675,7 @@ public class ExcelUtils {
 
 	/**
 	 * 打印消息，
-	 * 
+	 *
 	 * @param msg
 	 *            消息内容
 	 * @param tr
@@ -693,7 +689,7 @@ public class ExcelUtils {
 
 	/**
 	 * 打印消息，
-	 * 
+	 *
 	 * @param msg
 	 *            消息内容
 	 * @param tr
